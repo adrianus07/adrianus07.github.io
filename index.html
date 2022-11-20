@@ -1,3 +1,39 @@
-<html>
-	<p style="color: red;">kola</p>
-</html>
+<html><head>
+		<link rel="stylesheet" href="style.css">
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<h1>Liveworksheets Hack</h1>
+		<p style="background-color: red; width: 60px;">Atención: </p>
+		<p>Logueate en el profesorado de liveworksheets y verifica tu e-mail para que funcione. Para ello ve a <a href="https://www.liveworksheets.com/register/register.asp">este</a> enlace.</p>
+		<p>Introduce el enlace que te dió tu profesor.</p>
+		<input id="tonto">
+		<input value="dale" type="button" id="btn">
+		<p>Si no te funciona recarga la página: ctrl+mayus+r.</p>
+		<script>
+window.onload = init;
+
+var caca; 
+var pipi = [];
+
+function tal() {
+	caca = document.getElementById("tonto").value;
+	caca = caca.split("");
+	caca = caca.reverse();
+	for (x in caca) {
+		if (caca[x] != "_") {
+			pipi.push(caca[x]);
+		}
+		else if (caca[x] == "_") {
+			break;
+		}
+	}
+	pipi = pipi.reverse();
+	pipi = pipi.toString();
+	pipi = pipi.replaceAll(",", "");
+	window.open("https://www.liveworksheets.com/lwsmaker/howwasitmadeeditor.asp?edit=" + pipi);
+}
+
+function init() {
+	document.getElementById("btn").onclick = tal;
+}
